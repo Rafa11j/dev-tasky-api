@@ -18,7 +18,7 @@ class UsersGateway implements IUsersRepository {
     return this.toDomainList(users);
   }
 
-  async findById(id: string): Promise<IUsersResponse | undefined> {
+  async findById(id: string): Promise<IUser | undefined> {
     const user = await this.ormRepository.findOne(id);
 
     return this.toDomainFind(user);
@@ -58,23 +58,28 @@ class UsersGateway implements IUsersRepository {
     }));
   }
 
-  toDomain({ id, name, email }: User): IUsersResponse {
+  toDomain({ id, name, email, avatar, github }: User): IUsersResponse {
     return {
       id,
       email,
       name,
+      avatar,
+      github,
     };
   }
 
-  toDomainFind(user: User | undefined): IUsersResponse | undefined {
+  toDomainFind(user: User | undefined): IUser | undefined {
     if (!user) {
       return undefined;
     }
-    const { id, name, email } = user;
+    const { id, name, email, github, password, avatar } = user;
     return {
       id,
       name,
       email,
+      github,
+      password,
+      avatar,
     };
   }
 }

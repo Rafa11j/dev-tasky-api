@@ -42,6 +42,8 @@ class AuthenticateUserService {
       token: `Bearer ${token}`,
       name: user.name,
       email,
+      avatar: user.avatar,
+      github: user.github,
     };
   }
 }

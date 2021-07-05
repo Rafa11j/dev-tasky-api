@@ -1,5 +1,5 @@
 {
-  "name": "chat-api",
+  "name": "dev-tasky-api",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -8,6 +8,7 @@
     "typeorm": "cross-env NODE_ENV=development ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "class-transformer": "^0.4.0",

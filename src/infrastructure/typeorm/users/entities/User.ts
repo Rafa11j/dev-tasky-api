@@ -20,6 +20,12 @@ class User {
   @Column()
   password: string;
 
+  @Column()
+  github: string;
+
+  @Column()
+  avatar: string;
+
   @CreateDateColumn()
   created_at?: Date;
 
